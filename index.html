@@ -19,7 +19,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -30,7 +30,7 @@
   "description": "Fotografía corporativa y retrato profesional en Monterrey para LinkedIn, marca personal y empresas.",
   "url": "https://ads.cristypalacios.com/",
   "areaServed": {"@type":"City","name":"Monterrey, Nuevo León"},
-  "priceRange": "$2,600 - $5,600 MXN"
+  "priceRange": "$1,000 - $5,500 MXN"
 }
 </script>
 
@@ -54,12 +54,12 @@ src="https://www.facebook.com/tr?id=258813025875290&ev=PageView&noscript=1"
 
 <style>
 :root{
-  --bg:#faf9f6;
-  --bg-alt:#f1efe9;
+  --bg:#aea79b;
+  --bg-alt:#a09a8f;
   --ink:#141414;
-  --accent:#F5B729;
+  --accent:#3147ad;
   --alert:#C23B26;
-  --muted:#68655f;
+  --muted:#141414;
   --white:#ffffff;
   --radius-pill:100px;
   --radius-card:24px;
@@ -85,10 +85,10 @@ body{
 }
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
 img{max-width:100%;display:block;}
-section{padding:72px 0;}
-@media (max-width:640px){ section{padding:56px 0;} }
+section{padding:52px 0;}
+@media (max-width:640px){ section{padding:38px 0;} }
 
-h1,h2,h3{font-family:'Playfair Display',serif;font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:0;}
+h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em;margin:0;}
 h1{font-size:clamp(34px,6vw,68px);line-height:1.18;}
 h2{font-size:clamp(26px,4vw,42px);}
 p{margin:0;}
@@ -100,7 +100,7 @@ h1 mark{
   background-image:linear-gradient(100deg,var(--accent),var(--accent));
   background-repeat:no-repeat;background-position:left center;
   background-size:0% 100%;
-  color:var(--ink);padding:3px 6px;border-radius:5px;
+  color:#fff;padding:3px 6px;border-radius:5px;
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
   animation:highlight-sweep .9s ease-out .9s forwards;
 }
@@ -108,10 +108,13 @@ h1 mark{
 
 /* Header */
 header{position:sticky;top:0;z-index:50;
-  background:rgba(250,249,246,.92);backdrop-filter:blur(8px);
+  background:rgba(174,167,155,.92);backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(20,20,20,.08);}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--max);margin:0 auto;}
-.nav img{height:32px;width:auto;}
+.brand-lockup{display:flex;align-items:center;gap:12px;}
+.brand-icon{height:30px;width:auto;}
+.brand-wordmark{height:22px;width:auto;}
+@media (max-width:480px){ .brand-wordmark{display:none;} }
 .nav-actions .btn{padding:11px 20px;font-size:14px;}
 
 /* Buttons */
@@ -130,18 +133,22 @@ header{position:sticky;top:0;z-index:50;
 /* Hero */
 .hero{padding:64px 0 72px;}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
-@media (min-width:900px){ .hero-grid{grid-template-columns:1.05fr .95fr;gap:56px;} }
+@media (min-width:900px){ .hero-grid{grid-template-columns:1.35fr .65fr;gap:48px;align-items:start;} }
 @keyframes fade-up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 .hero .eyebrow{animation:fade-up .7s var(--ease) both;}
 .hero h1{animation:fade-up .8s var(--ease) .08s both;margin-top:14px;}
 .hero p.lead{animation:fade-up .8s var(--ease) .18s both;margin-top:18px;}
 .hero-cta{animation:fade-up .8s var(--ease) .28s both;margin-top:28px;}
-.hero .stats-row{animation:fade-up .8s var(--ease) .36s both;}
 .hero .hero-image{animation:fade-up .9s var(--ease) .46s both;}
-.hero-image img{border-radius:var(--radius-card);width:100%;aspect-ratio:1/1;object-fit:cover;box-shadow:0 30px 60px -20px rgba(20,20,20,.3);}
-.stats-row{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
-.stats-row span{font-size:14px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:8px;}
-.stats-row span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;}
+.hero-image img{border-radius:var(--radius-card);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px -20px rgba(20,20,20,.3);}
+
+/* Barra de confianza */
+.trust-bar{padding:36px 0;}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;}
+.trust-item svg{width:72px;height:72px;color:var(--accent);margin:0 auto 14px;}
+.trust-num{font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(20px,3vw,28px);color:var(--ink);}
+.trust-label{font-size:13px;color:var(--muted);margin-top:4px;}
+@media (max-width:640px){ .trust-item svg{width:52px;height:52px;} .trust-label{font-size:11.5px;} }
 
 /* Reveal */
 .reveal{opacity:0;transform:translateY(24px);
@@ -156,7 +163,7 @@ header{position:sticky;top:0;z-index:50;
 .reveal-stagger.in-view .stagger-item:nth-child(5){transition-delay:.32s;}
 
 /* Problema */
-.problema h2{color:var(--alert);text-shadow:0 0 26px rgba(194,59,38,.28);}
+.problema h2{color:var(--accent);text-shadow:0 0 26px rgba(49,71,173,.28);}
 .problema-body{max-width:760px;margin-top:22px;}
 .problema-body p{font-size:18px;color:var(--ink);}
 
@@ -164,8 +171,8 @@ header{position:sticky;top:0;z-index:50;
 .proceso-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px;}
 @media (min-width:800px){ .proceso-grid{grid-template-columns:repeat(3,1fr);} }
 .proceso-item{background:var(--white);border-radius:var(--radius-card);padding:28px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);}
-.proceso-num{width:40px;height:40px;border-radius:50%;border:2px solid var(--alert);color:var(--alert);
-  display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Playfair Display',serif;margin-bottom:14px;background:transparent;}
+.proceso-num{width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Nunito',sans-serif;margin-bottom:14px;background:transparent;}
 .proceso-item h3{font-size:19px;margin-bottom:8px;}
 .proceso-item p{color:var(--muted);font-size:15px;}
 
@@ -175,47 +182,75 @@ header{position:sticky;top:0;z-index:50;
 .promesa p{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:17px;}
 
 /* Portafolio */
-.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;}
-@media (min-width:700px){ .portfolio-grid{grid-template-columns:repeat(3,1fr);} }
-.portfolio-grid img{aspect-ratio:4/5;object-fit:cover;border-radius:18px;
-  transition:transform .5s ease;}
-.portfolio-grid a{display:block;overflow:hidden;border-radius:18px;}
-.portfolio-grid a:hover img{transform:scale(1.02);}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
+@media (max-width:640px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:12px;} }
+.portfolio-card{overflow:hidden;border-radius:18px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);display:block;}
+.portfolio-card img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .5s ease;}
+.portfolio-card:hover img{transform:scale(1.04);}
 
 /* Sobre mi */
 .sobremi-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
 @media (min-width:800px){ .sobremi-grid{grid-template-columns:.8fr 1.2fr;} }
-.sobremi-grid img{border-radius:var(--radius-card);width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
+.sobremi-grid img{border-radius:var(--radius-card);width:100%;height:auto;display:block;box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
 .sobremi-text p{font-size:18px;color:var(--ink);}
 .sobremi-text .eyebrow{margin-bottom:14px;display:block;}
 
 /* Testimonios marquee */
-.marquee{overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:40px;}
+.slider-wrap{position:relative;margin-top:40px;}
+.marquee{overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .marquee::-webkit-scrollbar{display:none;}
 .marquee-track{display:flex;gap:18px;padding:8px 4px 24px;}
+.slider-arrow{
+  position:absolute;top:50%;transform:translateY(-60%);
+  width:44px;height:44px;border-radius:50%;border:none;background:var(--white);
+  box-shadow:0 8px 20px -6px rgba(20,20,20,.4);cursor:pointer;
+  font-size:22px;line-height:1;color:var(--ink);z-index:5;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s ease, background .15s ease;
+}
+.slider-arrow:hover{background:var(--accent);color:#fff;transform:translateY(-60%) scale(1.06);}
+.slider-prev{left:-14px;}
+.slider-next{right:-14px;}
+@media (max-width:640px){ .slider-arrow{width:36px;height:36px;font-size:18px;} .slider-prev{left:-8px;} .slider-next{right:-8px;} }
+.reviews-more-link{display:inline-block;margin-top:24px;color:var(--accent);font-weight:700;text-decoration:none;}
+.reviews-more-link:hover{text-decoration:underline;}
 .testi-card{
-  scroll-snap-align:start;flex:0 0 300px;background:var(--white);
-  border-radius:var(--radius-card);padding:14px;
+  scroll-snap-align:start;flex:0 0 300px;height:360px;background:var(--white);
+  border-radius:var(--radius-card);padding:14px;display:flex;flex-direction:column;
   box-shadow:0 14px 34px -26px rgba(20,20,20,.35);
   transition:transform .3s ease, box-shadow .3s ease;
 }
 .testi-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -20px rgba(20,20,20,.2);}
-.testi-card img{border-radius:14px;width:100%;object-fit:contain;background:#fff;}
+.testi-card img{border-radius:14px;width:100%;flex:1 1 auto;min-height:0;object-fit:contain;background:#fff;}
 .testi-badge{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--muted);padding:0 4px;}
 
 /* Precio */
-.precio-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px;}
-@media (min-width:800px){ .precio-grid{grid-template-columns:1fr 1fr;} }
-.precio-card{background:var(--white);border-radius:var(--radius-card);padding:36px;
+.precio-layout{display:grid;grid-template-columns:1fr;gap:40px;margin-top:40px;}
+@media (min-width:860px){ .precio-layout{grid-template-columns:1fr 1fr;} }
+.precio-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  background:var(--white);border-radius:var(--radius-card);padding:32px 20px;
   box-shadow:0 20px 40px -25px rgba(20,20,20,.25);text-align:center;position:relative;overflow:hidden;}
-.precio-card::before{
+.precio-stats::before{
   content:"";position:absolute;inset:-40% -40% auto -40%;height:160px;
-  background:radial-gradient(circle,rgba(245,183,41,.25),transparent 70%);
+  background:radial-gradient(circle,rgba(49,71,173,.16),transparent 70%);
   filter:blur(10px);pointer-events:none;
 }
-.precio-card h3{font-size:16px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);position:relative;}
-.precio-num{font-size:clamp(30px,4.5vw,42px);font-weight:800;font-family:'Playfair Display',serif;color:var(--ink);margin-top:12px;position:relative;}
-.precio-card p.note{color:var(--muted);font-size:14px;margin-top:14px;position:relative;}
+.precio-stat-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);position:relative;}
+.precio-stat-num{font-size:clamp(24px,3.4vw,34px);font-weight:800;font-family:'Nunito',sans-serif;color:var(--ink);margin-top:10px;position:relative;}
+.precio-stat-num-sm{font-size:clamp(15px,2vw,18px);}
+.note{color:var(--muted);font-size:14px;}
+
+/* FAQ */
+.faq-title{font-size:19px;margin-bottom:14px;}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:var(--white);border-radius:16px;box-shadow:0 10px 26px -22px rgba(20,20,20,.4);overflow:hidden;}
+.faq-question{width:100%;text-align:left;background:none;border:none;padding:16px 20px;
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:600;color:var(--ink);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;}
+.faq-question .faq-plus{font-size:20px;color:var(--accent);flex-shrink:0;transition:transform .25s ease;line-height:1;}
+.faq-item.open .faq-question .faq-plus{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-answer p{padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.6;}
 
 /* CTA final */
 .cta-final{text-align:center;}
@@ -228,7 +263,8 @@ header{position:sticky;top:0;z-index:50;
 footer{padding:44px 0;background:var(--ink);color:#cfcdc7;}
 .footer-grid{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;}
 @media (min-width:700px){ .footer-grid{flex-direction:row;justify-content:space-between;text-align:left;} }
-footer img{height:30px;width:auto;}
+footer .brand-icon{height:26px;}
+footer .brand-wordmark{height:19px;filter:none;}
 footer a{color:#cfcdc7;text-decoration:underline;}
 .footer-links{display:flex;gap:20px;font-size:13px;}
 .footer-copy{font-size:12px;color:#8b8983;}
@@ -236,7 +272,7 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   .reveal,.stagger-item{opacity:1;transform:none;transition:none;}
-  .hero .eyebrow,.hero h1,.hero p.lead,.hero-cta,.hero .stats-row,.hero .hero-image{animation:none;}
+  .hero .eyebrow,.hero h1,.hero p.lead,.hero-cta,.hero .hero-image{animation:none;}
   h1 mark{animation:none;background-size:100% 100%;}
 }
 </style>
@@ -245,9 +281,9 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 
 <header>
   <div class="nav">
-    <img src="images/logo-negro.png" alt="Cristy Palacios Studio">
-    <div class="nav-actions">
-      <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Agenda tu sesión</a>
+    <div class="brand-lockup">
+      <img src="images/logo-negro.png" alt="" class="brand-icon">
+      <img src="images/wordmark-negro.png" alt="Cristy Palacios Studio" class="brand-wordmark">
     </div>
   </div>
 </header>
@@ -263,17 +299,33 @@ footer a{color:#cfcdc7;text-decoration:underline;}
         <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Agenda tu sesión por WhatsApp</a>
         <span class="microcopy">↳ Te lleva a WhatsApp para hablar directo conmigo</span>
       </div>
-      <div class="stats-row">
-        <span>9+ reseñas 5 estrellas</span>
-        <span>20 cupos al mes</span>
-        <span>Monterrey, México</span>
-      </div>
     </div>
     <div class="hero-image">
       <picture>
         <source media="(max-width:640px)" srcset="images/hero-mobile.jpg">
-        <img src="images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="1100" height="1100">
+        <img src="images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="880" height="1100">
       </picture>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DE CONFIANZA -->
+<section class="trust-bar reveal-stagger">
+  <div class="wrap trust-grid">
+    <div class="trust-item stagger-item">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="18" r="8" stroke="currentColor" stroke-width="3"/><circle cx="44" cy="18" r="8" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="22" r="9" stroke="currentColor" stroke-width="3"/><path d="M6 46c0-8 7-13 14-13s14 5 14 13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M30 46c0-9 8-15 16-15s16 6 16 15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <div class="trust-num">+1,000</div>
+      <div class="trust-label">Personas fotografiadas</div>
+    </div>
+    <div class="trust-item stagger-item">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="26" width="10" height="24" rx="1.5" stroke="currentColor" stroke-width="3"/><rect x="27" y="18" width="10" height="32" rx="1.5" stroke="currentColor" stroke-width="3"/><rect x="40" y="10" width="10" height="40" rx="1.5" stroke="currentColor" stroke-width="3"/></svg>
+      <div class="trust-num">+16</div>
+      <div class="trust-label">Empresas confiaron en mí</div>
+    </div>
+    <div class="trust-item stagger-item">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 6l6.5 13.5L53 21.5l-10.5 10 2.5 14.5L32 39l-13 7 2.5-14.5L11 21.5l14.5-2z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+      <div class="trust-num">5.0 ★★★★★</div>
+      <div class="trust-label">+300 reseñas con 5 estrellas</div>
     </div>
   </div>
 </section>
@@ -326,17 +378,7 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Portafolio</span>
     <h2 style="margin-top:14px;">Resultados reales de sesiones recientes</h2>
-    <div class="portfolio-grid reveal-stagger">
-      <a class="stagger-item" href="images/portafolio-1.jpg" target="_blank" rel="noopener"><img src="images/portafolio-1.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 1" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-2.jpg" target="_blank" rel="noopener"><img src="images/portafolio-2.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 2" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-3.jpg" target="_blank" rel="noopener"><img src="images/portafolio-3.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 3" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-4.jpg" target="_blank" rel="noopener"><img src="images/portafolio-4.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 4" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-5.jpg" target="_blank" rel="noopener"><img src="images/portafolio-5.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 5" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-6.jpg" target="_blank" rel="noopener"><img src="images/portafolio-6.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 6" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-7.jpg" target="_blank" rel="noopener"><img src="images/portafolio-7.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 7" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-8.jpg" target="_blank" rel="noopener"><img src="images/portafolio-8.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 8" loading="lazy"></a>
-      <a class="stagger-item" href="images/portafolio-9.jpg" target="_blank" rel="noopener"><img src="images/portafolio-9.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 9" loading="lazy"></a>
-    </div>
+    <div class="portfolio-grid" id="portfolio-grid"></div>
   </div>
 </section>
 
@@ -356,9 +398,14 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Reseñas reales</span>
     <h2 style="margin-top:14px;">Lo que dicen quienes ya tomaron su sesión</h2>
-    <div class="marquee">
-      <div class="marquee-track" id="marquee-track"></div>
+    <div class="slider-wrap">
+      <button type="button" class="slider-arrow slider-prev" data-target="marquee-track" aria-label="Reseña anterior">‹</button>
+      <div class="marquee">
+        <div class="marquee-track" id="marquee-track"></div>
+      </div>
+      <button type="button" class="slider-arrow slider-next" data-target="marquee-track" aria-label="Siguiente reseña">›</button>
     </div>
+    <a href="https://share.google/TLKUhhUc2heli9wSv" target="_blank" rel="noopener" class="reviews-more-link">Ver todas mis reseñas en Google →</a>
   </div>
 </section>
 
@@ -367,20 +414,32 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Inversión</span>
     <h2 style="margin-top:14px;">Sesiones y precios</h2>
-    <div class="precio-grid reveal-stagger">
-      <div class="precio-card stagger-item">
-        <h3>Sesiones individuales</h3>
-        <div class="precio-num">$2,600 – $5,600 <span style="font-size:16px;font-family:'Inter',sans-serif;font-weight:600;color:var(--muted);">MXN</span></div>
-        <p class="note">Según el paquete y la cantidad de fotos entregadas.</p>
+    <div class="precio-layout">
+      <div class="precio-left">
+        <div class="precio-stats reveal-stagger">
+          <div class="precio-stat stagger-item">
+            <span class="precio-stat-label">Desde</span>
+            <div class="precio-stat-num">$1,000</div>
+          </div>
+          <div class="precio-stat stagger-item">
+            <span class="precio-stat-label">Hasta</span>
+            <div class="precio-stat-num">$5,500</div>
+          </div>
+          <div class="precio-stat stagger-item">
+            <span class="precio-stat-label">Empresas</span>
+            <div class="precio-stat-num precio-stat-num-sm">Personalizado</div>
+          </div>
+        </div>
+        <p class="note" style="margin-top:22px;">Según el paquete y la cantidad de fotos entregadas. Para empresas y fotos de personal, los precios son personalizados por volumen — las sesiones grupales tienen precios accesibles.</p>
+        <div style="margin-top:28px;">
+          <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20quiero%20solicitar%20mis%20precios%20de%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Solicita tus precios por WhatsApp</a>
+          <span class="microcopy">↳ Resuelvo todas tus dudas, sin compromiso</span>
+        </div>
       </div>
-      <div class="precio-card stagger-item">
-        <h3>Empresas y equipos</h3>
-        <div class="precio-num" style="font-size:clamp(20px,3vw,26px);">Precio personalizado</div>
-        <p class="note">Para empresas y fotos de personal, los precios son personalizados por volumen. Sesiones grupales tienen precios accesibles.</p>
+      <div class="precio-right">
+        <h3 class="faq-title">Preguntas frecuentes</h3>
+        <div class="faq-list" id="faq-list"></div>
       </div>
-    </div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20quiero%20cotizar%20una%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Consulta tu cotización por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -399,7 +458,10 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 
 <footer>
   <div class="wrap footer-grid">
-    <img src="images/logo-blanco.png" alt="Cristy Palacios Studio">
+    <div class="brand-lockup">
+      <img src="images/logo-blanco.png" alt="" class="brand-icon">
+      <img src="images/wordmark-blanco.png" alt="Cristy Palacios Studio" class="brand-wordmark">
+    </div>
     <div class="footer-links">
       <a href="https://wa.me/528112770668" target="_blank" rel="noopener">WhatsApp</a>
       <a href="privacidad.html">Aviso de privacidad</a>
@@ -441,22 +503,83 @@ const cardHTML = i => `<div class="testi-card">
 </div>`;
 track.innerHTML = testimonios.map(cardHTML).join('') + testimonios.map(cardHTML).join('');
 
-const marqueeEl = document.querySelector('.marquee');
-if(marqueeEl && !prefersReducedMotion){
+// Portafolio (cuadrícula fija de 9 fotos, sin carrusel)
+const portafolio = Array.from({length:9}, (_,i)=>i+1).map(n => `images/portafolio-${n}.jpg`);
+const portfolioGrid = document.getElementById('portfolio-grid');
+const portfolioCardHTML = (src,i) => `<a class="portfolio-card" href="${src}" target="_blank" rel="noopener">
+  <img src="${src}" alt="Fotografía corporativa Monterrey - retrato profesional ${i+1}" loading="lazy">
+</a>`;
+portfolioGrid.innerHTML = portafolio.map(portfolioCardHTML).join('');
+
+// Auto-scroll para el deslizador de reseñas (.marquee)
+document.querySelectorAll('.marquee').forEach(marqueeEl => {
   let autoScroll = true, resumeTimer = null;
+  const speed = 0.9;
+  const pauseAuto = ()=>{ autoScroll=false; clearTimeout(resumeTimer);
+    resumeTimer=setTimeout(()=>autoScroll=true,3000); };
+  // Se expone para que las flechas de navegación manual también puedan pausar el auto-scroll.
+  marqueeEl.__pauseAutoScroll = pauseAuto;
+  if(prefersReducedMotion) return;
   (function step(){
     if(autoScroll){
-      marqueeEl.scrollLeft += 0.6;
+      marqueeEl.scrollLeft += speed;
       if(marqueeEl.scrollLeft >= marqueeEl.scrollWidth/2) marqueeEl.scrollLeft = 0;
     }
     requestAnimationFrame(step);
   })();
-  const pauseAuto = ()=>{ autoScroll=false; clearTimeout(resumeTimer);
-    resumeTimer=setTimeout(()=>autoScroll=true,3000); };
   marqueeEl.addEventListener('pointerdown',pauseAuto);
   marqueeEl.addEventListener('wheel',pauseAuto,{passive:true});
   marqueeEl.addEventListener('touchstart',pauseAuto,{passive:true});
-}
+});
+
+// Preguntas frecuentes (acordeón)
+const faqs = [
+  {q:"¿Emites facturas?", a:"Sí, te puedo facturar, solo envíame tu constancia de situación fiscal."},
+  {q:"¿Me puedes mandar ejemplos de las dos ediciones con fotos?", a:"Sí, mándame un mensaje y con gusto te envío fotos para que veas las diferencias. La edición profesional nos ayuda a vernos más frescos."},
+  {q:"¿Trabajas los sábados?", a:"Sí, estoy abierta los sábados para sesiones Silver, Gold y Marca Personal."},
+  {q:"¿Tienes ejemplos de cómo se ve alguien con y sin tu guía?", a:"Sí, tengo unas fotos de ejemplo para que valores si mi guía te aporta valor extra. Mándame un mensaje y te las envío."},
+  {q:"¿Dónde tienes tu estudio?", a:"Tengo mi estudio en San Pedro Garza García, y hay estacionamiento para ti."},
+  {q:"¿Aceptas tarjetas de crédito?", a:"Sí, acepto todas las tarjetas de crédito con un cargo extra del 5%."},
+  {q:"¿Me puedes quitar los brackets?", a:"Sí, todas las fotos con edición profesional incluyen el retirado de brackets para que luzcas tu sonrisa."}
+];
+const faqList = document.getElementById('faq-list');
+faqList.innerHTML = faqs.map((f,i) => `<div class="faq-item">
+  <button type="button" class="faq-question" aria-expanded="false">
+    <span>${f.q}</span><span class="faq-plus">+</span>
+  </button>
+  <div class="faq-answer"><p>${f.a}</p></div>
+</div>`).join('');
+faqList.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  const ans = item.querySelector('.faq-answer');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    faqList.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-answer').style.maxHeight = null;
+      o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+// Flechas de navegación manual (reseñas)
+document.querySelectorAll('.slider-arrow').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const trackEl = document.getElementById(btn.dataset.target);
+    const scrollEl = trackEl.closest('.marquee');
+    // Pausa el auto-scroll antes de mover manualmente: si no, el ciclo automático
+    // sigue corriendo al mismo tiempo que el clic y las dos animaciones chocan.
+    if(scrollEl.__pauseAutoScroll) scrollEl.__pauseAutoScroll();
+    const card = trackEl.querySelector('.testi-card, .portfolio-card');
+    const step = card ? card.getBoundingClientRect().width + 18 : 300;
+    scrollEl.scrollBy({left: btn.classList.contains('slider-prev') ? -step : step, behavior:'smooth'});
+  });
+});
 
 // Meta Pixel: Contact event en clics a WhatsApp
 document.addEventListener('click', function(e) {
