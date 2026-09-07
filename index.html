@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
 <title>Fotografía Corporativa en Monterrey para LinkedIn y Marca Personal | Cristy Palacios Studio</title>
 <meta name="description" content="Sesiones de fotografía corporativa en Monterrey. Fotos que comunican confianza, liderazgo y profesionalismo para LinkedIn, tu CV y tu marca personal. Agenda por WhatsApp.">
 <link rel="canonical" href="https://ads.cristypalacios.com/">
@@ -587,9 +588,10 @@ document.addEventListener('click', function(e) {
   if (!link || !link.href) return;
   if (link.href.includes('chat.whatsapp.com')) {
     fbq('track', 'Lead');
-  } else if (link.href.includes('api.whatsapp.com') || link.href.includes('wa.me')) {
-    fbq('track', 'Contact');
-  }
+  } else if (link.href.includes('api.whatsapp.com') || 
+           link.href.includes('wa.me')) {
+  fbq('track', 'Contact', {value: 1.0, currency: 'MXN'});
+}
 });
 
 // Meta Pixel: ViewContent cuando se ve la sección de precio
