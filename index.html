@@ -536,7 +536,7 @@ document.querySelectorAll('.slider-arrow').forEach(btn => {
     scrollEl.scrollBy({left: btn.classList.contains('slider-prev') ? -step : step, behavior:'smooth'});
   });
 });
-// Meta Pixel: Contact event en clics a WhatsApp
+// Meta Pixel: InteresadoEnWhatsApp event en clics a WhatsApp
 document.addEventListener('click', function(e) {
   var link = e.target.closest('a');
   if (!link || !link.href) return;
@@ -544,9 +544,8 @@ document.addEventListener('click', function(e) {
     fbq('track', 'Lead');
   } else if (link.href.includes('api.whatsapp.com') || 
            link.href.includes('wa.me')) {
-  fbq('track', 'Contact', {value: 1.0, currency: 'MXN'});
-  fbq('trackCustom', 'InteresadoEnWhatsApp', {value: 1.0, currency: 'MXN'});
-}
+    fbq('trackCustom', 'InteresadoEnWhatsApp', {value: 1.0, currency: 'MXN'});
+  }
 });
 // Meta Pixel: ViewContent cuando se ve la sección de precio
 (function(){
