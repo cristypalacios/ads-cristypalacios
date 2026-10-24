@@ -6,14 +6,14 @@
 <meta name="robots" content="noindex, follow">
 <title>Fotografía Corporativa en Monterrey para LinkedIn y Marca Personal | Cristy Palacios Studio</title>
 <meta name="description" content="Sesiones de fotografía corporativa en Monterrey. Fotos que comunican confianza, liderazgo y profesionalismo para LinkedIn, tu CV y tu marca personal. Agenda por WhatsApp.">
-<link rel="canonical" href="https://ads.cristypalacios.com/">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="canonical" href="https://ads.cristypalacios.com/paquetes/">
+<link rel="icon" type="image/png" href="https://ads.cristypalacios.com/images/favicon.png">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fotografía Corporativa en Monterrey | Cristy Palacios Studio">
 <meta property="og:description" content="Fotos que comunican confianza, liderazgo y profesionalismo para LinkedIn, tu CV y tu marca personal.">
 <meta property="og:image" content="https://ads.cristypalacios.com/images/og-image.jpg">
-<meta property="og:url" content="https://ads.cristypalacios.com/">
+<meta property="og:url" content="https://ads.cristypalacios.com/paquetes/">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,28 +26,15 @@
   "name": "Cristy Palacios Studio",
   "image": "https://ads.cristypalacios.com/images/og-image.jpg",
   "description": "Fotografía corporativa y retrato profesional en Monterrey para LinkedIn, marca personal y empresas.",
-  "url": "https://ads.cristypalacios.com/",
+  "url": "https://ads.cristypalacios.com/paquetes/",
   "areaServed": {"@type":"City","name":"Monterrey, Nuevo León"},
-  "priceRange": "$1,000 - $5,500 MXN"
+  "priceRange": "$2,600 - $5,600 MXN"
 }
 </script>
-<!-- Meta Pixel -->
+<!-- Meta Pixel DESACTIVADO en esta vista previa local (no se manda nada a Meta) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('set', 'autoConfig', false, '258813025875290');
-fbq('init', '258813025875290');
-fbq('track', 'PageView');
+function fbq(){ console.log('[vista previa] fbq() simulado:', arguments); }
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=258813025875290&ev=PageView&noscript=1"
-/></noscript>
 <style>
 :root{
   --bg:#aea79b;
@@ -90,15 +77,19 @@ p{margin:0;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-family:'Inter',sans-serif;}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);}
 h1 mark{
+  display:inline-block;
   background-color:transparent;
   background-image:linear-gradient(100deg,var(--accent),var(--accent));
   background-repeat:no-repeat;background-position:left center;
   background-size:0% 100%;
-  color:#fff;padding:3px 6px;border-radius:5px;
+  color:#fff;padding:7px 10px;margin-top:16px;border-radius:5px;
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
   animation:highlight-sweep .9s ease-out .9s forwards;
 }
 @keyframes highlight-sweep{to{background-size:100% 100%;}}
+.word-reveal{display:inline-block;opacity:0;transform:translateY(6px);
+  animation:word-in .4s ease-out forwards;}
+@keyframes word-in{to{opacity:1;transform:translateY(0);}}
 /* Header */
 header{position:sticky;top:0;z-index:50;
   background:rgba(174,167,155,.92);backdrop-filter:blur(8px);
@@ -107,7 +98,9 @@ header{position:sticky;top:0;z-index:50;
 .brand-lockup{display:flex;align-items:center;gap:12px;}
 .brand-icon{height:30px;width:auto;}
 .brand-wordmark{height:22px;width:auto;}
-@media (max-width:480px){ .brand-wordmark{display:none;} }
+.brand-wordmark-text{font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--ink);}
+@media (max-width:480px){ .brand-wordmark{display:none;} .brand-wordmark-text{display:none;} }
+footer .brand-wordmark-text{color:#fff;font-size:15px;}
 .nav-actions .btn{padding:11px 20px;font-size:14px;}
 /* Buttons */
 .btn{
@@ -131,14 +124,20 @@ header{position:sticky;top:0;z-index:50;
 .hero p.lead{animation:fade-up .8s var(--ease) .18s both;margin-top:18px;}
 .hero-cta{animation:fade-up .8s var(--ease) .28s both;margin-top:28px;}
 .hero .hero-image{animation:fade-up .9s var(--ease) .46s both;}
-.hero-image img{border-radius:var(--radius-card);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;box-shadow:0 30px 60px -20px rgba(20,20,20,.3);}
-/* Barra de confianza */
-.trust-bar{padding:36px 0;}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;}
-.trust-item svg{width:72px;height:72px;color:var(--accent);margin:0 auto 14px;}
-.trust-num{font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(20px,3vw,28px);color:var(--ink);}
-.trust-label{font-size:13px;color:var(--muted);margin-top:4px;}
-@media (max-width:640px){ .trust-item svg{width:52px;height:52px;} .trust-label{font-size:11.5px;} }
+.hero-image{overflow:hidden;border-radius:var(--radius-card);box-shadow:0 30px 60px -20px rgba(20,20,20,.3);}
+.hero-image img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+  animation:hero-zoom 1.6s var(--ease) .46s both;}
+@keyframes hero-zoom{from{transform:scale(1.18);}to{transform:scale(1);}}
+/* Estadísticas dentro del hero */
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px;}
+.hero-stat{text-align:left;}
+.hero-stat-icon{width:46px;height:46px;border-radius:50%;background:rgba(49,71,173,.12);
+  display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.hero-stat-icon svg{width:24px;height:24px;color:var(--accent);}
+.hero-stat-icon-img{width:58px;height:58px;object-fit:contain;margin-bottom:10px;display:block;}
+.trust-num{font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,24px);color:var(--ink);}
+.trust-label{font-size:12.5px;color:var(--muted);margin-top:2px;}
+@media (max-width:640px){ .hero-stats{gap:14px;} .hero-stat-icon{width:38px;height:38px;} .hero-stat-icon svg{width:20px;height:20px;} }
 /* Reveal */
 .reveal{opacity:0;transform:translateY(24px);
   transition:opacity .7s var(--ease), transform .7s var(--ease);}
@@ -150,10 +149,18 @@ header{position:sticky;top:0;z-index:50;
 .reveal-stagger.in-view .stagger-item:nth-child(3){transition-delay:.16s;}
 .reveal-stagger.in-view .stagger-item:nth-child(4){transition-delay:.24s;}
 .reveal-stagger.in-view .stagger-item:nth-child(5){transition-delay:.32s;}
+.reveal-stagger.in-view .stagger-item:nth-child(6){transition-delay:.4s;}
+.reveal-stagger.in-view .stagger-item:nth-child(7){transition-delay:.48s;}
+.reveal-stagger.in-view .stagger-item:nth-child(8){transition-delay:.56s;}
+.reveal-stagger.in-view .stagger-item:nth-child(9){transition-delay:.64s;}
 /* Problema */
 .problema h2{color:var(--accent);text-shadow:0 0 26px rgba(49,71,173,.28);}
 .problema-body{max-width:760px;margin-top:22px;}
 .problema-body p{font-size:18px;color:var(--ink);}
+.problema-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.problema-list li{font-size:18px;color:var(--ink);padding-left:30px;position:relative;}
+.problema-list li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;background:var(--accent);}
+.problema-closing{font-size:18px;color:var(--ink);font-weight:700;margin-top:22px;}
 /* Proceso */
 .proceso-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px;}
 @media (min-width:800px){ .proceso-grid{grid-template-columns:repeat(3,1fr);} }
@@ -166,16 +173,22 @@ header{position:sticky;top:0;z-index:50;
 .promesa{text-align:center;}
 .promesa h2{max-width:820px;margin:0 auto;}
 .promesa p{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:17px;}
+/* Foto destacada antes de Problema */
+.featured-photo{width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:var(--radius-card);box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
 /* Portafolio */
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
 @media (max-width:640px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:12px;} }
-.portfolio-card{overflow:hidden;border-radius:18px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);display:block;}
-.portfolio-card img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .5s ease;}
-.portfolio-card:hover img{transform:scale(1.04);}
+.portfolio-card{overflow:hidden;border-radius:18px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);display:block;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);}
+.portfolio-card:hover{transform:translateY(-8px);box-shadow:0 24px 44px -20px rgba(20,20,20,.5);}
+.portfolio-card img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .6s ease;}
+.portfolio-card:hover img{transform:scale(1.08);}
+.portfolio-grid .stagger-item{transform:translateY(36px) scale(.96);}
+.portfolio-grid.reveal-stagger.in-view .stagger-item{transform:translateY(0) scale(1);}
 /* Sobre mi */
 .sobremi-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
-@media (min-width:800px){ .sobremi-grid{grid-template-columns:.8fr 1.2fr;} }
-.sobremi-grid img{border-radius:var(--radius-card);width:100%;height:auto;display:block;box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
+@media (min-width:800px){ .sobremi-grid{grid-template-columns:.55fr 1.45fr;} }
+.sobremi-grid img{border-radius:var(--radius-card);width:100%;max-width:260px;height:auto;display:block;margin:0 auto;box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
 .sobremi-text p{font-size:18px;color:var(--ink);}
 .sobremi-text .eyebrow{margin-bottom:14px;display:block;}
 /* Testimonios marquee */
@@ -198,12 +211,13 @@ header{position:sticky;top:0;z-index:50;
 .reviews-more-link{display:inline-block;margin-top:24px;color:var(--accent);font-weight:700;text-decoration:none;}
 .reviews-more-link:hover{text-decoration:underline;}
 .testi-card{
-  scroll-snap-align:start;flex:0 0 300px;height:360px;background:var(--white);
+  scroll-snap-align:start;flex:0 0 190px;height:230px;background:var(--white);
   border-radius:var(--radius-card);padding:14px;display:flex;flex-direction:column;
-  box-shadow:0 14px 34px -26px rgba(20,20,20,.35);
+  box-shadow:0 14px 34px -26px rgba(20,20,20,.35);cursor:pointer;
   transition:transform .3s ease, box-shadow .3s ease;
 }
-.testi-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -20px rgba(20,20,20,.2);}
+.testi-card:hover:not(.expanded){transform:translateY(-4px);box-shadow:0 18px 34px -20px rgba(20,20,20,.2);}
+.testi-card.expanded{transform:scale(1.55);z-index:20;box-shadow:0 26px 54px -20px rgba(20,20,20,.5);}
 .testi-card img{border-radius:14px;width:100%;flex:1 1 auto;min-height:0;object-fit:contain;background:#fff;}
 .testi-badge{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--muted);padding:0 4px;}
 /* Precio */
@@ -221,6 +235,17 @@ header{position:sticky;top:0;z-index:50;
 .precio-stat-num{font-size:clamp(24px,3.4vw,34px);font-weight:800;font-family:'Nunito',sans-serif;color:var(--ink);margin-top:10px;position:relative;}
 .precio-stat-num-sm{font-size:clamp(15px,2vw,18px);}
 .note{color:var(--muted);font-size:14px;}
+/* Paquetes (variante) */
+.paquetes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media (max-width:860px){ .paquetes-grid{grid-template-columns:1fr;} }
+.paquete-card{background:var(--white);border:2px solid var(--ink);border-radius:16px;padding:30px 24px;text-align:center;}
+.paquete-nombre{font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;letter-spacing:.25em;margin-bottom:20px;}
+.paquete-precio-bar{font-family:'Nunito',sans-serif;font-weight:800;font-size:28px;padding:12px 0;margin-bottom:20px;border-radius:4px;}
+.paquete-silver .paquete-precio-bar{background:#dcdcdc;}
+.paquete-gold .paquete-precio-bar{background:#f7df8a;}
+.paquete-express .paquete-precio-bar{background:#f3b9c5;}
+.paquete-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:15px;color:var(--ink);}
+.paquete-lista strong{font-weight:800;}
 /* FAQ */
 .faq-title{font-size:19px;margin-bottom:14px;}
 .faq-list{display:flex;flex-direction:column;gap:10px;}
@@ -251,7 +276,9 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   html{scroll-behavior:auto;}
   .reveal,.stagger-item{opacity:1;transform:none;transition:none;}
   .hero .eyebrow,.hero h1,.hero p.lead,.hero-cta,.hero .hero-image{animation:none;}
+  .hero-image img{animation:none;}
   h1 mark{animation:none;background-size:100% 100%;}
+  .word-reveal{animation:none;opacity:1;transform:none;}
 }
 </style>
 </head>
@@ -259,8 +286,8 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 <header>
   <div class="nav">
     <div class="brand-lockup">
-      <img src="images/logo-negro.png" alt="" class="brand-icon">
-      <img src="images/wordmark-negro.png" alt="Cristy Palacios Studio" class="brand-wordmark">
+      <img src="https://ads.cristypalacios.com/images/logo-negro.png" alt="" class="brand-icon">
+      <span class="brand-wordmark-text">Cristy Palacios Studio</span>
     </div>
   </div>
 </header>
@@ -269,47 +296,52 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Fotografía corporativa · Monterrey</span>
-      <h1>Fotografía corporativa en Monterrey para <mark>LinkedIn y marca personal</mark></h1>
+      <h1>Fotografía corporativa en Monterrey para<br><mark><span class="word-reveal" style="animation-delay:.95s">LinkedIn</span> <span class="word-reveal" style="animation-delay:1.1s">y</span> <span class="word-reveal" style="animation-delay:1.25s">marca</span> <span class="word-reveal" style="animation-delay:1.4s">personal</span></mark></h1>
       <p class="lead">Fotos donde tu lenguaje corporal comunica confianza y profesionalismo antes de que alguien lea una palabra de tu perfil.</p>
-      <div class="hero-cta">
-        <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Agenda tu sesión por WhatsApp</a>
-        <span class="microcopy">↳ Te lleva a WhatsApp para hablar directo conmigo</span>
+      <div class="hero-stats reveal-stagger">
+        <div class="hero-stat stagger-item">
+          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/1000_fotografiadas_A.png?cb=2" alt="" loading="lazy">
+          <div class="trust-num">+1,000</div>
+          <div class="trust-label">Personas fotografiadas</div>
+        </div>
+        <div class="hero-stat stagger-item">
+          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/16_empresas_A.png?cb=2" alt="" loading="lazy">
+          <div class="trust-num">+16</div>
+          <div class="trust-label">Empresas confiaron en mí</div>
+        </div>
+        <div class="hero-stat stagger-item">
+          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792793013/300_reseñas_A.png?cb=2" alt="" loading="lazy">
+          <div class="trust-num">5.0 ★★★★★</div>
+          <div class="trust-label">+300 reseñas con 5 estrellas</div>
+        </div>
       </div>
     </div>
     <div class="hero-image">
       <picture>
-        <source media="(max-width:640px)" srcset="images/hero-mobile.jpg">
-        <img src="images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="880" height="1100">
+        <source media="(max-width:640px)" srcset="https://ads.cristypalacios.com/images/hero-mobile.jpg">
+        <img src="https://ads.cristypalacios.com/images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="880" height="1100">
       </picture>
     </div>
   </div>
 </section>
-<!-- BARRA DE CONFIANZA -->
-<section class="trust-bar reveal-stagger">
-  <div class="wrap trust-grid">
-    <div class="trust-item stagger-item">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="18" r="8" stroke="currentColor" stroke-width="3"/><circle cx="44" cy="18" r="8" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="22" r="9" stroke="currentColor" stroke-width="3"/><path d="M6 46c0-8 7-13 14-13s14 5 14 13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M30 46c0-9 8-15 16-15s16 6 16 15" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-      <div class="trust-num">+1,000</div>
-      <div class="trust-label">Personas fotografiadas</div>
-    </div>
-    <div class="trust-item stagger-item">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="26" width="10" height="24" rx="1.5" stroke="currentColor" stroke-width="3"/><rect x="27" y="18" width="10" height="32" rx="1.5" stroke="currentColor" stroke-width="3"/><rect x="40" y="10" width="10" height="40" rx="1.5" stroke="currentColor" stroke-width="3"/></svg>
-      <div class="trust-num">+16</div>
-      <div class="trust-label">Empresas confiaron en mí</div>
-    </div>
-    <div class="trust-item stagger-item">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 6l6.5 13.5L53 21.5l-10.5 10 2.5 14.5L32 39l-13 7 2.5-14.5L11 21.5l14.5-2z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
-      <div class="trust-num">5.0 ★★★★★</div>
-      <div class="trust-label">+300 reseñas con 5 estrellas</div>
-    </div>
+<!-- FOTO DESTACADA -->
+<section class="reveal">
+  <div class="wrap">
+    <img src="https://res.cloudinary.com/piobupnk/image/upload/v1792802539/Estudio_de_Fotos_Para_Perfil_Profesional.jpg" alt="Estudio de fotografía para perfil profesional - Cristy Palacios Studio" loading="lazy" class="featured-photo">
   </div>
 </section>
 <!-- PROBLEMA -->
 <section class="bg-alt problema reveal">
   <div class="wrap">
-    <h2>Tu experiencia no se ve si tu foto no la respalda</h2>
+    <h2>¡Creo que no buscas fotos!</h2>
     <div class="problema-body">
-      <p>Tu experiencia, capacidad y liderazgo deben ser transmitidos para causar la mejor primera impresión. Yo te guío para que destaques con una imagen que muestre tu auténtica personalidad profesional. No te dejaré verte forzado, genérico o poco fotogénico. El objetivo son fotos que te sumen autoridad justo donde más se necesita: LinkedIn, tu CV, tu web o tu marca personal.</p>
+      <ul class="problema-list">
+        <li>Buscas mostrar capacidad y liderazgo para causar la mejor primera impresión.</li>
+        <li>Quieres destacar si estás buscando trabajo y ser considerado para una entrevista.</li>
+        <li>Deseas que tus futuros clientes confíen en ti gracias a una imagen sólida.</li>
+        <li>No quieres verte posado.</li>
+      </ul>
+      <p class="problema-closing">Si es lo que buscas, deja que sea yo tu guía, fotógrafa y asesora de imagen.</p>
     </div>
   </div>
 </section>
@@ -322,17 +354,17 @@ footer a{color:#cfcdc7;text-decoration:underline;}
       <div class="proceso-item stagger-item">
         <div class="proceso-num">1</div>
         <h3>Agenda por WhatsApp</h3>
-        <p>Escríbeme directo, sin formularios ni esperas.</p>
+        <p>Escríbeme y te atiendo personalmente sin formularios ni esperas.</p>
       </div>
       <div class="proceso-item stagger-item">
         <div class="proceso-num">2</div>
         <h3>Sesión guiada en estudio</h3>
-        <p>Te dirijo pose por pose. No necesitas experiencia frente a cámara.</p>
+        <p>Te dirijo para verte natural cuidando todos los detalles, y antes te entrego mis consejos para que prepares tu apariencia y tu ropa.</p>
       </div>
       <div class="proceso-item stagger-item">
         <div class="proceso-num">3</div>
         <h3>Recibes tus fotos editadas</h3>
-        <p>Listas para LinkedIn, tu web y tus redes.</p>
+        <p>Fotos digitales optimizadas para tu LinkedIn, tu web y tus redes.</p>
       </div>
     </div>
   </div>
@@ -344,21 +376,28 @@ footer a{color:#cfcdc7;text-decoration:underline;}
     <p>Cuando tu foto comunica lo mismo que tú transmites en persona — confianza, presencia, profesionalismo — cada perfil, propuesta o presentación empieza un paso adelante.</p>
   </div>
 </section>
+<!-- CTA ANTES DE PORTAFOLIO -->
+<section style="text-align:center;padding-bottom:0;">
+  <div class="wrap hero-cta">
+    <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Agenda tu sesión por WhatsApp</a>
+    <span class="microcopy">↳ Te lleva a WhatsApp para hablar directo conmigo</span>
+  </div>
+</section>
 <!-- PORTAFOLIO -->
 <section id="portafolio">
   <div class="wrap">
     <span class="eyebrow">Portafolio</span>
     <h2 style="margin-top:14px;">Resultados reales de sesiones recientes</h2>
-    <div class="portfolio-grid" id="portfolio-grid"></div>
+    <div class="portfolio-grid reveal-stagger" id="portfolio-grid"></div>
   </div>
 </section>
 <!-- SOBRE MI -->
 <section class="bg-alt reveal">
   <div class="wrap sobremi-grid">
-    <img src="images/perfil.jpg" alt="Cristy Palacios, fotógrafa especializada en retrato corporativo en Monterrey" loading="lazy">
+    <img src="https://ads.cristypalacios.com/images/perfil.jpg" alt="Cristy Palacios, fotógrafa especializada en retrato corporativo en Monterrey" loading="lazy">
     <div class="sobremi-text">
       <span class="eyebrow">Sobre mí</span>
-      <p>Soy Cristy Palacios, fotógrafa especializada en retrato corporativo en Monterrey. Trabajo el lenguaje no verbal — postura, mirada, gesto — porque ahí vive gran parte de lo que una foto comunica de ti. Trabajo con profesionistas, ejecutivos y empresas que buscan una imagen que respalde su marca personal.</p>
+      <p>Soy Cristy Palacios, fotógrafa con 6 años de experiencia dedicada solo al retrato corporativo en Monterrey. Trabajo el lenguaje no verbal — postura, mirada, gesto — porque ahí vive gran parte de lo que una foto comunica de ti. Trabajo con profesionistas, ejecutivos y empresas que buscan una imagen que respalde su marca personal.</p>
     </div>
   </div>
 </section>
@@ -382,23 +421,43 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Inversión</span>
     <h2 style="margin-top:14px;">Sesiones y precios</h2>
-    <div class="precio-layout">
+    <div class="paquetes-grid reveal-stagger" style="margin-top:40px;">
+      <div class="paquete-card paquete-silver stagger-item">
+        <div class="paquete-nombre">SILVER</div>
+        <div class="paquete-precio-bar">$3,800</div>
+        <ul class="paquete-lista">
+          <li>90 minutos</li>
+          <li>3 cambios de ropa</li>
+          <li>Fondo blanco, gris y negro</li>
+          <li><strong>1 Foto Edición Profesional</strong></li>
+          <li>9 fotos corrección luz y color</li>
+        </ul>
+      </div>
+      <div class="paquete-card paquete-gold stagger-item">
+        <div class="paquete-nombre">GOLD</div>
+        <div class="paquete-precio-bar">$5,600</div>
+        <ul class="paquete-lista">
+          <li>90 minutos</li>
+          <li>3 cambios de ropa</li>
+          <li>Fondo blanco, gris y negro</li>
+          <li><strong>6 fotos Edición Profesional</strong></li>
+          <li>4 fotos corrección luz y color</li>
+        </ul>
+      </div>
+      <div class="paquete-card paquete-express stagger-item">
+        <div class="paquete-nombre">EXPRESS</div>
+        <div class="paquete-precio-bar">$2,600</div>
+        <ul class="paquete-lista">
+          <li>30 minutos</li>
+          <li>Sin cambios de ropa</li>
+          <li>Fondo gris</li>
+          <li>6 fotos corrección luz y color</li>
+        </ul>
+      </div>
+    </div>
+    <div class="precio-layout" style="margin-top:40px;">
       <div class="precio-left">
-        <div class="precio-stats reveal-stagger">
-          <div class="precio-stat stagger-item">
-            <span class="precio-stat-label">Desde</span>
-            <div class="precio-stat-num">$1,000</div>
-          </div>
-          <div class="precio-stat stagger-item">
-            <span class="precio-stat-label">Hasta</span>
-            <div class="precio-stat-num">$5,500</div>
-          </div>
-          <div class="precio-stat stagger-item">
-            <span class="precio-stat-label">Empresas</span>
-            <div class="precio-stat-num precio-stat-num-sm">Personalizado</div>
-          </div>
-        </div>
-        <p class="note" style="margin-top:22px;">Según el paquete y la cantidad de fotos entregadas. Para empresas y fotos de personal, los precios son personalizados por volumen — las sesiones grupales tienen precios accesibles.</p>
+        <p class="note">Para empresas y fotos de personal, los precios son personalizados por volumen — las sesiones grupales tienen precios accesibles.</p>
         <div style="margin-top:28px;">
           <a href="https://wa.me/528112770668?text=Hola%20Cristy%2C%20quiero%20solicitar%20mis%20precios%20de%20sesi%C3%B3n%20de%20fotos%20corporativas." class="btn btn-whatsapp" target="_blank" rel="noopener">Solicita tus precios por WhatsApp</a>
           <span class="microcopy">↳ Resuelvo todas tus dudas, sin compromiso</span>
@@ -425,12 +484,12 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 <footer>
   <div class="wrap footer-grid">
     <div class="brand-lockup">
-      <img src="images/logo-blanco.png" alt="" class="brand-icon">
-      <img src="images/wordmark-blanco.png" alt="Cristy Palacios Studio" class="brand-wordmark">
+      <img src="https://ads.cristypalacios.com/images/logo-blanco.png" alt="" class="brand-icon">
+      <span class="brand-wordmark-text">Cristy Palacios Studio</span>
     </div>
     <div class="footer-links">
       <a href="https://wa.me/528112770668" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="privacidad.html">Aviso de privacidad</a>
+      <a href="https://ads.cristypalacios.com/privacidad.html">Aviso de privacidad</a>
     </div>
     <div class="footer-copy">© 2026 Cristy Palacios Studio · Monterrey, México</div>
   </div>
@@ -449,15 +508,15 @@ document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>revealObserver
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Testimonios (reseñas de Google, capturas reales)
 const testimonios = [
-  {img:"images/review-adriana.jpg", n:"Adriana Rgz."},
-  {img:"images/review-daniel.jpg", n:"Daniel Villegas"},
-  {img:"images/review-agla.jpg", n:"Agla G."},
-  {img:"images/review-yair.jpg", n:"Yair Reyes"},
-  {img:"images/review-cristina-nieva.jpg", n:"Cristina Nieva"},
-  {img:"images/review-gabriel.jpg", n:"Gabriel Campos"},
-  {img:"images/review-usuario-local.jpg", n:"Usuario Local"},
-  {img:"images/review-cristina-sifuentes.jpg", n:"Cristina Sifuentes"},
-  {img:"images/review-ricardo.jpg", n:"Ricardo García"}
+  {img:"https://ads.cristypalacios.com/images/review-adriana.jpg", n:"Adriana Rgz."},
+  {img:"https://ads.cristypalacios.com/images/review-daniel.jpg", n:"Daniel Villegas"},
+  {img:"https://ads.cristypalacios.com/images/review-agla.jpg", n:"Agla G."},
+  {img:"https://ads.cristypalacios.com/images/review-yair.jpg", n:"Yair Reyes"},
+  {img:"https://ads.cristypalacios.com/images/review-cristina-nieva.jpg", n:"Cristina Nieva"},
+  {img:"https://ads.cristypalacios.com/images/review-gabriel.jpg", n:"Gabriel Campos"},
+  {img:"https://ads.cristypalacios.com/images/review-usuario-local.jpg", n:"Usuario Local"},
+  {img:"https://ads.cristypalacios.com/images/review-cristina-sifuentes.jpg", n:"Cristina Sifuentes"},
+  {img:"https://ads.cristypalacios.com/images/review-ricardo.jpg", n:"Ricardo García"}
 ];
 const track = document.getElementById('marquee-track');
 const cardHTML = i => `<div class="testi-card">
@@ -465,10 +524,18 @@ const cardHTML = i => `<div class="testi-card">
   <div class="testi-badge">★★★★★ Reseña de Google — ${i.n}</div>
 </div>`;
 track.innerHTML = testimonios.map(cardHTML).join('') + testimonios.map(cardHTML).join('');
+// Reseñas: tocar para agrandar
+track.querySelectorAll('.testi-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const wasExpanded = card.classList.contains('expanded');
+    track.querySelectorAll('.testi-card.expanded').forEach(c => c.classList.remove('expanded'));
+    if (!wasExpanded) card.classList.add('expanded');
+  });
+});
 // Portafolio (cuadrícula fija de 9 fotos, sin carrusel)
-const portafolio = Array.from({length:9}, (_,i)=>i+1).map(n => `images/portafolio-${n}.jpg`);
+const portafolio = Array.from({length:9}, (_,i)=>i+1).map(n => `https://ads.cristypalacios.com/images/portafolio-${n}.jpg`);
 const portfolioGrid = document.getElementById('portfolio-grid');
-const portfolioCardHTML = (src,i) => `<a class="portfolio-card" href="${src}" target="_blank" rel="noopener">
+const portfolioCardHTML = (src,i) => `<a class="portfolio-card stagger-item" href="${src}" target="_blank" rel="noopener">
   <img src="${src}" alt="Fotografía corporativa Monterrey - retrato profesional ${i+1}" loading="lazy">
 </a>`;
 portfolioGrid.innerHTML = portafolio.map(portfolioCardHTML).join('');
@@ -536,7 +603,7 @@ document.querySelectorAll('.slider-arrow').forEach(btn => {
     scrollEl.scrollBy({left: btn.classList.contains('slider-prev') ? -step : step, behavior:'smooth'});
   });
 });
-// Meta Pixel: InteresadoEnWhatsApp event en clics a WhatsApp
+// Meta Pixel: InteresadoPaquetes event en clics a WhatsApp (variante de paquetes)
 document.addEventListener('click', function(e) {
   var link = e.target.closest('a');
   if (!link || !link.href) return;
@@ -544,7 +611,7 @@ document.addEventListener('click', function(e) {
     fbq('track', 'Lead');
   } else if (link.href.includes('api.whatsapp.com') || 
            link.href.includes('wa.me')) {
-    fbq('trackCustom', 'InteresadoEnWhatsApp', {value: 1.0, currency: 'MXN'});
+    fbq('trackCustom', 'InteresadoPaquetes', {value: 1.0, currency: 'MXN'});
   }
 });
 // Meta Pixel: ViewContent cuando se ve la sección de precio
