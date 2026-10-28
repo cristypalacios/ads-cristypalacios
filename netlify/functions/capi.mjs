@@ -9,7 +9,7 @@
 
 const PIXEL_ID_DEFAULT = "258813025875290";
 const GRAPH_VERSION_DEFAULT = "v23.0";
-const ALLOWED_EVENTS = new Set(["PageView", "ViewContent", "Lead", "InteresadoEnWhatsApp"]);
+const ALLOWED_EVENTS = new Set(["PageView", "ViewContent", "Lead", "InteresadoEnWhatsApp", "Schedule", "ConfirmaPorWhatsApp"]);
 const ALLOWED_HOSTS = new Set(["ads.cristypalacios.com", "localhost"]);
 
 const json = (status, body) =>
@@ -49,6 +49,7 @@ export default async (req, context) => {
   if (p.custom_data && typeof p.custom_data === "object") {
     if (typeof p.custom_data.value === "number") customData.value = p.custom_data.value;
     if (typeof p.custom_data.currency === "string") customData.currency = p.custom_data.currency.slice(0, 3);
+    if (typeof p.custom_data.content_name === "string") customData.content_name = p.custom_data.content_name.slice(0, 100);
   }
 
   const event = {

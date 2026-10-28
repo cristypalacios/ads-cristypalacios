@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#aea79b">
+<title>Sesión Gold Perfil Profesional pre agendada: confirma por WhatsApp | Cristy Palacios Studio</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<!-- 1) Lee los datos que Cal.com agrega a la dirección y luego limpia la dirección.
+        Así el nombre y el correo del cliente no viajan al Pixel de Meta, que lee la dirección de la página. -->
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  window.__cal = {
+    uid: q.get('uid') || '',
+    first: q.get('attendeeFirstName') || '',
+    full: q.get('attendeeName') || '',
+    start: q.get('startTime') || '',
+    title: q.get('title') || ''
+  };
+  if (location.search) { try { history.replaceState(null, '', location.pathname); } catch (e) {} }
+})();
+</script>
+<!-- 2) Meta Pixel + envío al servidor (misma lógica que la landing) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set', 'autoConfig', false, '258813025875290');
+fbq('init', '258813025875290');
+
+window.metaTrack = function (name, params, isCustom, eventId) {
+  var id = eventId || ((window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2)));
+  params = params || {};
+  fbq(isCustom ? 'trackCustom' : 'track', name, params, { eventID: id });
+  function cookie(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : undefined; }
+  var fbc = cookie('_fbc');
+  try {
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
+        event_source_url: location.origin + location.pathname, fbp: cookie('_fbp'), fbc: fbc, custom_data: params
+      })
+    }).catch(function () {});
+  } catch (e) {}
+};
+metaTrack('PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=258813025875290&ev=PageView&noscript=1"
+/></noscript>
+<style>
+:root{--bg:#aea79b;--bg-alt:#a09a8f;--ink:#141414;--accent:#3147ad;--white:#ffffff;--radius-pill:100px;--radius-card:24px;--max:720px;--ease:cubic-bezier(.22,1,.36,1);}
+*{box-sizing:border-box;}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:'Inter',sans-serif;color:var(--ink);background-color:var(--bg);
+  background-image:radial-gradient(rgba(20,20,20,.08) 1.4px, transparent 1.4px);background-size:26px 26px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.02em;margin:0;}
+p{margin:0;}
+header{background:rgba(174,167,155,.92);border-bottom:1px solid rgba(20,20,20,.08);}
+.nav{display:flex;align-items:center;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.brand-lockup{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.brand-icon{height:30px;width:auto;}
+.brand-wordmark-text{font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.01em;}
+main{flex:1;width:100%;max-width:var(--max);margin:0 auto;padding:48px 24px 64px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+h1{font-size:clamp(32px,6vw,54px);margin-top:12px;}
+.lead{font-size:clamp(17px,2vw,20px);margin-top:16px;}
+.cita{margin-top:28px;background:var(--white);border-radius:var(--radius-card);padding:22px 24px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);}
+.cita[hidden]{display:none;}
+.paquete{margin-top:28px;background:var(--white);border-radius:var(--radius-card);padding:20px 24px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);}
+.paquete h2{font-size:20px;color:var(--accent);}
+.paquete p{margin-top:6px;font-size:15px;}
+.cita h2{font-size:15px;color:var(--accent);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em;}
+.cita-fecha{font-family:'Nunito',sans-serif;font-weight:800;font-size:clamp(22px,4vw,30px);line-height:1.2;}
+.cita-hora{font-size:18px;margin-top:4px;}
+.cita-nota{font-size:13px;margin-top:8px;opacity:.8;}
+.cta{margin-top:32px;}
+.cita{margin-top:16px;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 34px;border-radius:var(--radius-pill);font-weight:600;font-size:17px;cursor:pointer;border:none;
+  transition:transform .15s ease, box-shadow .15s ease;text-decoration:none;font-family:'Inter',sans-serif;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+.btn-whatsapp{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.35);}
+.btn-whatsapp:hover{box-shadow:0 12px 30px rgba(37,211,102,.45);}
+.btn svg{width:22px;height:22px;fill:currentColor;flex:none;}
+.microcopy{display:block;font-size:13px;margin-top:12px;}
+.pasos{margin:44px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;counter-reset:paso;}
+.pasos li{counter-increment:paso;display:flex;gap:14px;align-items:flex-start;font-size:16px;}
+.pasos li::before{content:counter(paso);flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:-2px;}
+.cambios{margin-top:36px;font-size:14px;}
+footer{padding:22px 24px;background:#141414;color:#8b8983;font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+footer a{color:#fff;}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand-lockup" href="/">
+      <img src="/images/logo-negro.png" alt="" class="brand-icon" width="400" height="387">
+      <span class="brand-wordmark-text">Cristy Palacios Studio</span>
+    </a>
+  </div>
+</header>
+<main>
+  <span class="eyebrow">Sesión pre agendada</span>
+  <h1 id="titulo">¡Gracias por agendar!</h1>
+  <p class="lead">Tu sesión quedó pre agendada. Para asegurar tu lugar, <strong>escríbeme por WhatsApp</strong> y te paso los datos para tu anticipo.</p>
+
+  <section class="paquete" aria-label="Tu paquete">
+    <h2>Sesión Gold Perfil Profesional</h2>
+    <p>90 min · 3 cambios de outfit · 4 fotos edición básica + 6 editadas profesional</p>
+  </section>
+
+  <section class="cita" id="cita" aria-label="Datos de tu sesión" hidden>
+    <h2>Tu cita</h2>
+    <p class="cita-fecha" id="citaFecha"></p>
+    <p class="cita-hora" id="citaHora"></p>
+    <p class="cita-nota">Horario de Monterrey, Nuevo León.</p>
+  </section>
+
+  <div class="cta">
+    <a class="btn btn-whatsapp" id="btnWa" href="https://wa.me/528112770668" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4C18.6 23.7 24 18.4 24 11.8c0-3.2-1.2-6.1-3.5-8.3zM12 21.7c-1.8 0-3.6-.5-5.100-1.400l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200c0-5.400 4.400-9.800 9.900-9.800 2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.500 9.900-9.700 9.900zm5.400-7.400c-.3-.1-1.800-.9-2-1-.3-.1-.5-.1-.7.1l-1 1.200c-.2.2-.4.200-.7.100-.3-.1-1.200-.4-2.300-1.400-.9-.8-1.400-1.700-1.600-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-.9-2.200c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.200 5.100 4.500.7.3 1.300.5 1.700.6.7.2 1.400.2 1.900.1.600-.1 1.800-.7 2-1.400.3-.7.3-1.300.2-1.400-.1-.1-.3-.2-.6-.3z"/></svg>
+      Confirmar por WhatsApp
+    </a>
+    <span class="microcopy">↳ Se abre WhatsApp con tu mensaje listo. Solo tienes que enviarlo.</span>
+  </div>
+
+  <ol class="pasos">
+    <li><span>Toca el botón y envía el mensaje por WhatsApp.</span></li>
+    <li><span>Te paso los datos para que hagas tu anticipo.</span></li>
+    <li><span>Con tu anticipo, tu sesión queda confirmada.</span></li>
+  </ol>
+
+  <p class="cambios">Cal.com te envió el detalle de tu cita por correo. ¿Necesitas cambiar la fecha? Usa el enlace de ese correo o escríbeme por WhatsApp.</p>
+</main>
+<footer>
+  <span>© 2026 Cristy Palacios Studio · Monterrey, México</span>
+  <a href="/privacidad.html">Aviso de privacidad</a>
+</footer>
+<script>
+(function(){
+  var cal = window.__cal || {};
+  var nombre = (cal.first || (cal.full || '').split(' ')[0] || '').trim().slice(0, 60);
+  if (nombre) document.getElementById('titulo').textContent = '¡Gracias, ' + nombre + '!';
+
+  var fecha = '', hora = '';
+  if (cal.start) {
+    var d = new Date(cal.start);
+    if (!isNaN(d.getTime())) {
+      var tz = { timeZone: 'America/Monterrey' };
+      fecha = new Intl.DateTimeFormat('es-MX', Object.assign({ weekday: 'long', day: 'numeric', month: 'long' }, tz)).format(d);
+      fecha = fecha.charAt(0).toUpperCase() + fecha.slice(1);
+      hora = new Intl.DateTimeFormat('es-MX', Object.assign({ hour: 'numeric', minute: '2-digit' }, tz)).format(d);
+      document.getElementById('citaFecha').textContent = fecha;
+      document.getElementById('citaHora').textContent = hora;
+      document.getElementById('cita').hidden = false;
+    }
+  }
+
+  // Mensaje de confirmación (el texto es el tuyo; solo cambia el nombre de la sesión)
+  var SESION = 'Gold';
+  var msg = 'Cristy acabo de agendar \uD83D\uDCC5 mi sesión \uD83D\uDCB0 ' + SESION + ' \uD83D\uDCF8, entiendo que mi sesión solo esta pre agendada hasta que te haga el pago de mi anticipo. \n\nPasame tus datos para hacerte el deposito \uD83D\uDC4D.';
+  var btn = document.getElementById('btnWa');
+  btn.href = 'https://api.whatsapp.com/send?phone=528112770668&text=' + encodeURIComponent(msg);
+  btn.addEventListener('click', function(){ metaTrack('ConfirmaPorWhatsApp', { content_name: SESION }, true); });
+
+  // Evento "Schedule" (cita agendada): una sola vez por reserva. Sin uid no se envía, para no contar visitas directas.
+  if (cal.uid) {
+    var key = 'cal_sched_' + cal.uid, done = false;
+    try { done = !!localStorage.getItem(key); } catch (e) {}
+    if (!done) {
+      metaTrack('Schedule', { content_name: SESION }, false, 'cal-' + cal.uid);
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -11,6 +11,8 @@ La página lleva `noindex`: existe para recibir tráfico de Meta Ads y no para a
 | `index.html` | La landing completa (HTML, CSS y JS en un solo archivo) |
 | `privacidad.html` | Aviso de privacidad |
 | `404.html` | Página de error |
+| `gracias-sesion/index.html` | Página de gracias a la que Cal.com envía después de agendar; invita a confirmar por WhatsApp |
+| `gracias-gold/`, `gracias-silver/`, `gracias-express/`, `gracias-grupal/` | Una página de gracias por paquete de Cal.com. Piden confirmar por WhatsApp y hacer el anticipo |
 | `images/` | Fotos del hero, portafolio, reseñas, logos y `og-image.jpg` |
 | `paquetes/`, `Pinterest/` | Carpetas existentes del proyecto |
 | `netlify.toml` | Encabezados de seguridad, caché y carpeta de funciones |
@@ -28,6 +30,8 @@ Pixel ID: `258813025875290`. Cada evento sale del navegador y del servidor con e
 | `ViewContent` | Al ver el 40% de la sección de precios |
 | `InteresadoEnWhatsApp` (personalizado) | Clic en un enlace `wa.me` o `api.whatsapp.com` |
 | `Lead` | Clic en un enlace `chat.whatsapp.com` |
+| `Schedule` | Al llegar a la página de gracias tras agendar en Cal.com (una vez por reserva). En las páginas por sesión incluye el nombre de la sesión |
+| `ConfirmaPorWhatsApp` (personalizado) | Clic en "Confirmar por WhatsApp" en la página de gracias |
 
 Variables de entorno en Netlify (nunca se guardan en GitHub):
 
