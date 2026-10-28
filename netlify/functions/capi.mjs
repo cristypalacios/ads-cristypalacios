@@ -9,7 +9,7 @@
 
 const PIXEL_ID_DEFAULT = "258813025875290";
 const GRAPH_VERSION_DEFAULT = "v23.0";
-const ALLOWED_EVENTS = new Set(["PageView", "ViewContent", "Lead", "InteresadoEnWhatsApp", "Schedule", "ConfirmaPorWhatsApp"]);
+const ALLOWED_EVENTS = new Set(["PageView", "ViewContent", "Lead", "InteresadoEnWhatsApp", "InteresadoPaquetes", "Schedule", "ConfirmaPorWhatsApp"]);
 const ALLOWED_HOSTS = new Set(["ads.cristypalacios.com", "localhost"]);
 
 const json = (status, body) =>
