@@ -7,7 +7,12 @@
 <title>Fotografía Corporativa en Monterrey para LinkedIn y Marca Personal | Cristy Palacios Studio</title>
 <meta name="description" content="Sesiones de fotografía corporativa en Monterrey. Fotos que comunican confianza, liderazgo y profesionalismo para LinkedIn, tu CV y tu marca personal. Agenda por WhatsApp.">
 <link rel="canonical" href="https://ads.cristypalacios.com/">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#aea79b">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fotografía Corporativa en Monterrey | Cristy Palacios Studio">
@@ -15,7 +20,14 @@
 <meta property="og:image" content="https://ads.cristypalacios.com/images/og-image.jpg">
 <meta property="og:url" content="https://ads.cristypalacios.com/">
 <meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Cristy Palacios Studio">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fotografía corporativa en Monterrey por Cristy Palacios Studio">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fotografía Corporativa en Monterrey | Cristy Palacios Studio">
+<meta name="twitter:description" content="Fotos que comunican confianza, liderazgo y profesionalismo para LinkedIn, tu CV y tu marca personal.">
+<meta name="twitter:image" content="https://ads.cristypalacios.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -23,7 +35,10 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://ads.cristypalacios.com/#negocio",
   "name": "Cristy Palacios Studio",
+  "telephone": "+52 81 1277 0668",
+  "address": {"@type":"PostalAddress","addressLocality":"Monterrey","addressRegion":"Nuevo León","addressCountry":"MX"},
   "image": "https://ads.cristypalacios.com/images/og-image.jpg",
   "description": "Fotografía corporativa y retrato profesional en Monterrey para LinkedIn, marca personal y empresas.",
   "url": "https://ads.cristypalacios.com/",
@@ -43,7 +58,28 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('set', 'autoConfig', false, '258813025875290');
 fbq('init', '258813025875290');
-fbq('track', 'PageView');
+
+// Envía cada evento al Pixel (navegador) y a /api/capi (servidor) con el MISMO event_id para que Meta no cuente doble.
+window.metaTrack = function (name, params, isCustom) {
+  var id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
+  params = params || {};
+  fbq(isCustom ? 'trackCustom' : 'track', name, params, { eventID: id });
+  function cookie(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : undefined; }
+  var fbc = cookie('_fbc');
+  if (!fbc) { var q = new URLSearchParams(location.search).get('fbclid'); if (q) fbc = 'fb.1.' + Date.now() + '.' + q; }
+  try {
+    fetch('/api/capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
+        event_source_url: location.href, fbp: cookie('_fbp'), fbc: fbc, custom_data: params
+      })
+    }).catch(function () {});
+  } catch (e) {}
+};
+metaTrack('PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=258813025875290&ev=PageView&noscript=1"
@@ -660,10 +696,10 @@ document.addEventListener('click', function(e) {
   var link = e.target.closest('a');
   if (!link || !link.href) return;
   if (link.href.includes('chat.whatsapp.com')) {
-    fbq('track', 'Lead');
+    metaTrack('Lead');
   } else if (link.href.includes('api.whatsapp.com') || 
            link.href.includes('wa.me')) {
-    fbq('trackCustom', 'InteresadoEnWhatsApp', {value: 1.0, currency: 'MXN'});
+    metaTrack('InteresadoEnWhatsApp', {value: 1.0, currency: 'MXN'}, true);
   }
 });
 // Meta Pixel: ViewContent cuando se ve la sección de precio
@@ -673,7 +709,7 @@ document.addEventListener('click', function(e) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !viewContentFired) {
-        fbq('track', 'ViewContent');
+        metaTrack('ViewContent');
         viewContentFired = true;
         observer.disconnect();
       }
@@ -684,4 +720,3 @@ document.addEventListener('click', function(e) {
 </script>
 </body>
 </html>
-<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="18638dd4-b3b8-4553-9b96-1018b774cd0b" data-app-host="app.netlify.com" data-account-tier="free"></script>
