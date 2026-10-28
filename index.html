@@ -226,16 +226,38 @@ footer .brand-wordmark-text{color:#fff;font-size:15px;}
 .promesa p{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:17px;}
 /* Foto destacada antes de Problema */
 .featured-photo{width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:var(--radius-card);box-shadow:0 24px 50px -20px rgba(20,20,20,.3);}
-/* Portafolio */
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
-@media (max-width:640px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:12px;} }
-.portfolio-card{overflow:hidden;border-radius:18px;box-shadow:0 14px 34px -26px rgba(20,20,20,.35);display:block;
-  transition:transform .4s var(--ease), box-shadow .4s var(--ease);}
-.portfolio-card:hover{transform:translateY(-8px);box-shadow:0 24px 44px -20px rgba(20,20,20,.5);}
-.portfolio-card img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .6s ease;}
-.portfolio-card:hover img{transform:scale(1.08);}
-.portfolio-grid .stagger-item{transform:translateY(36px) scale(.96);}
-.portfolio-grid.reveal-stagger.in-view .stagger-item{transform:translateY(0) scale(1);}
+/* Portafolio: carrusel en abanico */
+.port-carousel-wrap{margin-top:36px;}
+.port-carousel{display:flex;gap:0;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
+  padding:44px calc(50% - 130px) 72px;cursor:grab;user-select:none;-webkit-user-select:none;scrollbar-width:none;outline-offset:-4px;}
+.port-carousel::-webkit-scrollbar{display:none;}
+.port-carousel.dragging{cursor:grabbing;scroll-snap-type:none;}
+.port-carousel:focus-visible{outline:3px solid var(--accent);}
+.port-item{position:relative;flex:0 0 auto;width:260px;aspect-ratio:4/5;margin:0 -20px 0 0;scroll-snap-align:center;
+  will-change:transform,opacity;transition:transform .12s ease-out,opacity .12s ease-out;}
+.port-item:last-child{margin-right:0;}
+.port-img-float{position:absolute;inset:0;overflow:hidden;border-radius:14px;background:#d9d4cb;
+  box-shadow:0 20px 46px -12px rgba(20,20,20,.45);transition:transform .5s;}
+.port-img-float img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;pointer-events:none;
+  -webkit-user-drag:none;transition:transform .5s;}
+.port-item.is-centered:hover{z-index:60 !important;}
+.port-item.is-centered:hover .port-img-float{animation-play-state:paused;}
+.port-item.is-centered:hover .port-img-float img{transform:scale(1.06);}
+@keyframes portFloatA{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+@keyframes portFloatB{0%,100%{transform:translateY(0);}50%{transform:translateY(-17px);}}
+@keyframes portFloatC{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.port-item:nth-child(3n+1) .port-img-float{animation:portFloatA 6.2s ease-in-out 0s infinite;}
+.port-item:nth-child(3n+2) .port-img-float{animation:portFloatB 6.8s ease-in-out -2.2s infinite;}
+.port-item:nth-child(3n+3) .port-img-float{animation:portFloatC 7.1s ease-in-out -4.1s infinite;}
+.port-img-float.port-offscreen,.port-carousel.is-scrolling .port-img-float{animation-play-state:paused !important;}
+.port-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:-34px;position:relative;z-index:1;}
+.port-dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(20,20,20,.28);cursor:pointer;
+  transition:background .3s,width .3s,border-radius .3s;}
+.port-dot.is-active{background:var(--accent);width:22px;border-radius:4px;}
+.port-dot:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+@media (min-width:600px){ .port-carousel{padding:44px calc(50% - 160px) 72px;} .port-item{width:320px;margin-right:-26px;} }
+@media (min-width:900px){ .port-carousel{padding:44px calc(50% - 190px) 72px;} .port-item{width:380px;margin-right:-30px;} }
+@media (prefers-reduced-motion:reduce){ .port-item{transition:none;} .port-img-float{animation:none !important;} }
 /* Sobre mi */
 .sobremi-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
 @media (min-width:800px){ .sobremi-grid{grid-template-columns:.55fr 1.45fr;} }
@@ -502,7 +524,20 @@ footer a{color:#cfcdc7;text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Portafolio</span>
     <h2 style="margin-top:14px;">Resultados reales de sesiones recientes</h2>
-    <div class="portfolio-grid reveal-stagger" id="portfolio-grid"></div>
+    </div>
+  <div class="port-carousel-wrap">
+    <div class="port-carousel" id="portCarousel" role="region" aria-label="Portafolio de sesiones recientes. Desliza para ver más fotos." tabindex="0">
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-1.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 1" width="864" height="1080" loading="lazy" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-2.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 2" width="864" height="1080" loading="lazy" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-3.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 3" width="864" height="1080" loading="eager" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-4.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 4" width="864" height="1080" loading="eager" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-5.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 5" width="864" height="1080" loading="eager" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-6.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 6" width="864" height="1080" loading="eager" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-7.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 7" width="864" height="1080" loading="eager" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-8.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 8" width="864" height="1080" loading="lazy" decoding="async"></div></figure>
+    <figure class="port-item"><div class="port-img-float"><img src="images/portafolio-9.jpg" alt="Fotografía corporativa Monterrey - retrato profesional 9" width="864" height="1080" loading="lazy" decoding="async"></div></figure>
+    </div>
+    <div class="port-dots" id="portDots" role="group" aria-label="Elegir foto del portafolio"></div>
   </div>
 </section>
 <!-- SOBRE MI -->
@@ -627,13 +662,107 @@ track.querySelectorAll('.testi-card').forEach(card => {
     if (!wasExpanded) card.classList.add('expanded');
   });
 });
-// Portafolio (cuadrícula fija de 9 fotos, sin carrusel)
-const portafolio = Array.from({length:9}, (_,i)=>i+1).map(n => `images/portafolio-${n}.jpg`);
-const portfolioGrid = document.getElementById('portfolio-grid');
-const portfolioCardHTML = (src,i) => `<a class="portfolio-card stagger-item" href="${src}" target="_blank" rel="noopener">
-  <img src="${src}" alt="Fotografía corporativa Monterrey - retrato profesional ${i+1}" loading="lazy">
-</a>`;
-portfolioGrid.innerHTML = portafolio.map(portfolioCardHTML).join('');
+// Portafolio: carrusel en abanico. La foto del centro queda recta y grande; las de los lados se inclinan, se achican y se atenúan según su distancia.
+(function(){
+  var carousel = document.getElementById('portCarousel');
+  var dotsBox = document.getElementById('portDots');
+  if (!carousel) return;
+  var items = Array.prototype.slice.call(carousel.querySelectorAll('.port-item'));
+  if (!items.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Puntos de navegación
+  var dots = items.map(function(item, i){
+    var d = document.createElement('button');
+    d.type = 'button'; d.className = 'port-dot';
+    d.setAttribute('aria-label', 'Ver foto ' + (i + 1) + ' de ' + items.length);
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsBox.appendChild(d);
+    return d;
+  });
+
+  function pitch(){ return items.length > 1 ? items[1].offsetLeft - items[0].offsetLeft : items[0].offsetWidth; }
+  function goTo(i){
+    i = Math.max(0, Math.min(items.length - 1, i));
+    carousel.scrollTo({ left: pitch() * i, behavior: reduce ? 'auto' : 'smooth' });
+  }
+
+  // Pausar la flotación de las fotos fuera de vista y mientras hay scroll
+  if ('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var f = e.target.querySelector('.port-img-float');
+        if (f) f.classList.toggle('port-offscreen', !e.isIntersecting);
+      });
+    }, { root: carousel, rootMargin: '0px 120px', threshold: 0 });
+    items.forEach(function(it){ obs.observe(it); });
+  }
+  var scrollTimer = null;
+  carousel.addEventListener('scroll', function(){
+    carousel.classList.add('is-scrolling');
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function(){ carousel.classList.remove('is-scrolling'); }, 150);
+  }, { passive: true });
+
+  // Arrastre con mouse (en pantallas táctiles el scroll ya es nativo)
+  var down = false, startX = 0, startScroll = 0;
+  carousel.addEventListener('pointerdown', function(e){
+    if (e.pointerType === 'touch') return;
+    down = true; startX = e.clientX; startScroll = carousel.scrollLeft;
+    carousel.classList.add('dragging');
+  });
+  carousel.addEventListener('pointermove', function(e){
+    if (down) carousel.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  function endDrag(){ down = false; carousel.classList.remove('dragging'); }
+  carousel.addEventListener('pointerup', endDrag);
+  carousel.addEventListener('pointerleave', endDrag);
+
+  // Teclado: flechas izquierda y derecha
+  carousel.addEventListener('keydown', function(e){
+    var cur = items.findIndex(function(it){ return it.classList.contains('is-centered'); });
+    if (e.key === 'ArrowRight'){ e.preventDefault(); goTo(cur + 1); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); goTo(cur - 1); }
+  });
+
+  // Abanico: inclinación, escala y opacidad según la distancia al centro
+  var ROT_STEP = 14, ROT_MAX = 22, SCALE_BASE = 1.08, SCALE_FALL = 0.18, SCALE_MIN = 0.7, OP_FALL = 0.3, OP_MIN = 0.4;
+  var ticking = false;
+  function updateFan(){
+    ticking = false;
+    var r = carousel.getBoundingClientRect();
+    var center = r.left + r.width / 2;
+    var w = items[0].offsetWidth || 260;
+    var best = 0, bestDist = Infinity;
+    items.forEach(function(item, i){
+      var b = item.getBoundingClientRect();
+      var px = (b.left + b.width / 2) - center;
+      var abs = Math.abs(px / w);
+      if (Math.abs(px) < bestDist){ bestDist = Math.abs(px); best = i; }
+      var rot = Math.max(-ROT_MAX, Math.min(ROT_MAX, -(px / w) * ROT_STEP));
+      var sc = Math.max(SCALE_MIN, SCALE_BASE - abs * SCALE_FALL);
+      var op = Math.max(OP_MIN, 1 - abs * OP_FALL);
+      item.style.transform = 'rotate(' + rot.toFixed(2) + 'deg) scale(' + sc.toFixed(3) + ')';
+      item.style.opacity = op.toFixed(3);
+      item.style.zIndex = String(Math.max(1, Math.round(50 - abs * 10)));
+    });
+    items.forEach(function(item, i){ item.classList.toggle('is-centered', i === best); });
+    dots.forEach(function(d, i){
+      d.classList.toggle('is-active', i === best);
+      if (i === best) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+    });
+  }
+  carousel.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(updateFan); }
+  }, { passive: true });
+  window.addEventListener('resize', updateFan);
+
+  // Posición inicial: la foto de en medio
+  if (items.length > 2){
+    carousel.scrollLeft = pitch() * Math.floor((items.length - 1) / 2);
+  }
+  updateFan();
+})();
 // Auto-scroll para el deslizador de reseñas (.marquee)
 document.querySelectorAll('.marquee').forEach(marqueeEl => {
   let autoScroll = true, resumeTimer = null;
@@ -693,7 +822,7 @@ document.querySelectorAll('.slider-arrow').forEach(btn => {
     const trackEl = document.getElementById(btn.dataset.target);
     const scrollEl = trackEl.closest('.marquee');
     if(scrollEl.__pauseAutoScroll) scrollEl.__pauseAutoScroll();
-    const card = trackEl.querySelector('.testi-card, .portfolio-card');
+    const card = trackEl.querySelector('.testi-card');
     const step = card ? card.getBoundingClientRect().width + 18 : 300;
     scrollEl.scrollBy({left: btn.classList.contains('slider-prev') ? -step : step, behavior:'smooth'});
   });
