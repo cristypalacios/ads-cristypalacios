@@ -13,6 +13,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#aea79b">
+<link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width:640px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-desktop.jpg" media="(min-width:641px)" fetchpriority="high">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fotografía Corporativa en Monterrey | Cristy Palacios Studio">
@@ -38,11 +40,11 @@
   "@id": "https://ads.cristypalacios.com/#negocio",
   "name": "Cristy Palacios Studio",
   "telephone": "+52 81 1277 0668",
-  "address": {"@type":"PostalAddress","addressLocality":"Monterrey","addressRegion":"Nuevo León","addressCountry":"MX"},
+  "address": {"@type":"PostalAddress","addressLocality":"San Pedro Garza García","addressRegion":"Nuevo León","addressCountry":"MX"},
   "image": "https://ads.cristypalacios.com/images/og-image.jpg",
   "description": "Fotografía corporativa y retrato profesional en Monterrey para LinkedIn, marca personal y empresas.",
   "url": "https://ads.cristypalacios.com/",
-  "areaServed": {"@type":"City","name":"Monterrey, Nuevo León"},
+  "areaServed": [{"@type":"City","name":"Monterrey, Nuevo León"},{"@type":"City","name":"San Pedro Garza García, Nuevo León"}],
   "priceRange": "$1,600 - $5,600 MXN"
 }
 </script>
@@ -327,17 +329,21 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 .obtienes-item svg{width:38px;height:38px;stroke:var(--accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .obtienes-item h3{font-size:17px;color:var(--accent)}
 .obtienes-item ul{margin:0;padding-left:17px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.45}
+.skip-link{position:absolute;left:-9999px;top:8px;background:#141414;color:#fff;padding:10px 16px;border-radius:8px;z-index:1000;text-decoration:none;font-weight:600}
+.skip-link:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header>
   <div class="nav">
     <div class="brand-lockup">
-      <img src="images/logo-negro.png" alt="" class="brand-icon">
+      <img src="images/logo-negro.png" alt="" class="brand-icon" width="400" height="387">
       <span class="brand-wordmark-text">Cristy Palacios Studio</span>
     </div>
   </div>
 </header>
+<main id="contenido">
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
@@ -347,17 +353,17 @@ footer a{color:#cfcdc7;text-decoration:underline;}
       <p class="lead">Fotos donde tu lenguaje corporal comunica confianza y profesionalismo antes de que alguien lea una palabra de tu perfil.</p>
       <div class="hero-stats reveal-stagger">
         <div class="hero-stat stagger-item">
-          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/1000_fotografiadas_A.png?cb=2" alt="" loading="lazy">
+          <img class="hero-stat-icon-img" width="58" height="58" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/1000_fotografiadas_A.png?cb=2" alt="" loading="lazy">
           <div class="trust-num">+1,000</div>
           <div class="trust-label">Personas fotografiadas</div>
         </div>
         <div class="hero-stat stagger-item">
-          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/16_empresas_A.png?cb=2" alt="" loading="lazy">
+          <img class="hero-stat-icon-img" width="58" height="58" src="https://res.cloudinary.com/piobupnk/image/upload/v1792792801/16_empresas_A.png?cb=2" alt="" loading="lazy">
           <div class="trust-num">+16</div>
           <div class="trust-label">Empresas confiaron en mí</div>
         </div>
         <div class="hero-stat stagger-item">
-          <img class="hero-stat-icon-img" src="https://res.cloudinary.com/piobupnk/image/upload/v1792793013/300_reseñas_A.png?cb=2" alt="" loading="lazy">
+          <img class="hero-stat-icon-img" width="58" height="58" src="https://res.cloudinary.com/piobupnk/image/upload/v1792793013/300_reseñas_A.png?cb=2" alt="" loading="lazy">
           <div class="trust-num">5.0 ★★★★★</div>
           <div class="trust-label">+300 reseñas con 5 estrellas</div>
         </div>
@@ -366,7 +372,7 @@ footer a{color:#cfcdc7;text-decoration:underline;}
     <div class="hero-image">
       <picture>
         <source media="(max-width:640px)" srcset="images/hero-mobile.jpg">
-        <img src="images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="880" height="1100">
+        <img src="images/hero-desktop.jpg" alt="Sesión de fotografía corporativa en Monterrey - Cristy Palacios Studio" width="880" height="1100" fetchpriority="high">
       </picture>
     </div>
   </div>
@@ -502,7 +508,7 @@ footer a{color:#cfcdc7;text-decoration:underline;}
 <!-- SOBRE MI -->
 <section class="bg-alt reveal">
   <div class="wrap sobremi-grid">
-    <img src="images/perfil.jpg" alt="Cristy Palacios, fotógrafa especializada en retrato corporativo en Monterrey" loading="lazy">
+    <img src="images/perfil.jpg" alt="Cristy Palacios, fotógrafa especializada en retrato corporativo en Monterrey" width="800" height="1000" loading="lazy">
     <div class="sobremi-text">
       <span class="eyebrow">Sobre mí</span>
       <p>Soy Cristy Palacios, fotógrafa con 6 años de experiencia dedicada solo al retrato corporativo en Monterrey. Trabajo el lenguaje no verbal — postura, mirada, gesto — porque ahí vive gran parte de lo que una foto comunica de ti. Trabajo con profesionistas, ejecutivos y empresas que buscan una imagen que respalde su marca personal.</p>
@@ -569,10 +575,11 @@ footer a{color:#cfcdc7;text-decoration:underline;}
     </div>
   </div>
 </section>
+</main>
 <footer>
   <div class="wrap footer-grid">
     <div class="brand-lockup">
-      <img src="images/logo-blanco.png" alt="" class="brand-icon">
+      <img src="images/logo-blanco.png" alt="" class="brand-icon" width="400" height="387">
       <span class="brand-wordmark-text">Cristy Palacios Studio</span>
     </div>
     <div class="footer-links">

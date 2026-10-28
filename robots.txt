@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://ads.cristypalacios.com/sitemap.xml
